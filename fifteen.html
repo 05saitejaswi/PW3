@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fifteen Puzzle</title>
+
+		<link href="./style/fifteen.css" type="text/css" rel="stylesheet"/>
+		<link href="./style/log-panel.css" type="text/css" rel="stylesheet"/>
+		<link href="./style/apply.css" type="text/css" rel="stylesheet"/>
+		<link href="./style/edit.css" type="text/css" rel="stylesheet"/>
+		<script src="./js/fifteen.js" type="text/javascript"></script>
+		<script src="./js/events.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<h1 id="title">Fifteen Puzzle</h1>
+
+		<div id="main-column">
+
+			<div id="puzzlearea">
+			</div>
+
+			<div id="control-panel">
+				<button id="shufflebutton" title="Shuffle the tiles">Shuffle</button>
+				<button id="reset-button" title="Reset the puzzle">Reset</button>
+				<button id="undo-button" title="Undo the last step">Undo</button>
+				<button id="picture-button" title="Show number">Number</button>
+				<button id="help-button" title="Display help information">Help</button>
+			</div>
+			
+			<div id="output"></div>
+
+			<div id="logging-area">
+				<div id="move-log-switch-container">
+					<span id="switch-text">Disable Recording: </span>
+					<!-- Log switch -->
+					<label class="log-switch">
+						<input id="move-log-switch" type="checkbox" checked="true">
+						<span class="slider round"></span>
+					</label>
+					<button id="clear-log-button" title="Clear all logs">Clear logs (C)</button>
+				</div>
+
+				<div class="log-text">Move Log:</div>
+				<span id="log"></span>
+				<br>
+
+				<div class="log-text">
+					Inverse Move Log:
+				</div>
+				<span id="inverseLog"></span>
+				<br>
+
+				<div class="apply-input-container">
+					Custom move sequence: 
+					<br>
+					<textarea id="apply-inputbox-id" class="apply-inputbox" placeholder="e.g. R D L U"></textarea>
+					<br>
+					<div id="apply-invalid-msg"></div>
+					<button id="apply-button" title="Apply custom move sequence">Apply</button>
+				</div>
+
+				<div class="edit-input-container">
+					Edit
+					<br>
+					<div class="edit-input-sub-container">
+						<textarea id="edit-inputbox-id" class="edit-inputbox" placeholder="e.g. {1: 2, 2: 3, 3: 1} or (1, 3, 2)"></textarea>
+						<br>
+						<div id="edit-invalid-msg"></div>
+						<button id="edit-button" title="Edit the current configuration">Set</button>
+						<button id="import-button" title="Import an existing configuration from file">Import</button>
+						<input type="file" id="import-file-input" name="" hidden>
+						<button id="save-button" title="Save the current configuration to file">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
